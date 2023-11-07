@@ -28,8 +28,8 @@ class Bus:
     def display_passenger_info(self, seat_number):
         passenger = self.passengers.get(seat_number)
         if passenger:
-            print(f"Tank you for choosing JAGUAR Bus \nPassenger Information for Seat {seat_number}:")
-            print(f"Name: {passenger.name}")
+            print(f"Tank you for choosing JAGUAR Bus🚌 \nPassenger Information for Seat:\n {passenger.name} has taken the seat number: {seat_number}:")
+            
             print(f"Age: {passenger.age}")
             print(f"Gender: {passenger.gender}")
         else:
@@ -49,31 +49,17 @@ class VIPBus(Bus):
 
     def are_all_vip_seats_booked(self):
         return len(self.vip_seats) == 0
-class regular(Bus):
-    def __init__(self, capacity):
-        super().__init__(capacity)
-        self.regular_seats = list(range(1, min(1, capacity + 1)))
 
-    def book_seat(self, passenger, seat_number):
-        if seat_number in self.regular_seats:
-            self.regular_seats.remove(seat_number)
-            print(f"Regular Seat {seat_number} booked for {passenger.name}")
-        else:
-            super().book_seat(passenger, seat_number)
-
-    def are_all_vip_seats_booked(self):
-        return len(self.vip_seats) == 0
 # Example usage:
 def main():
     bus_type = input("BOOK A TICKET(🎟) \n JAGUAR BUS 🚌\nChoose bus type (VIP/Regular): ").lower()
 
     if bus_type == 'vip':
-        bus = VIPBus(2)
+        bus = VIPBus(10)
     elif bus_type == 'regular':
         bus = Bus(2)
     else:
         print("we dont have that bus type at JAGUAR BUS") 
-    
 
     while not bus.are_all_seats_booked():
         bus.display_seats()
@@ -91,8 +77,8 @@ def main():
 
     if isinstance(bus, VIPBus) and bus.are_all_vip_seats_booked():
         print("VIP Seats are no longer available.❌")
-    if isinstance(bus, regular) and bus.are_all_vip_seats_booked():
-        print("VIP Seats are no longer available.❌")
+    else:
+        print("Regular Seats are no longer available.❌")
 
 if __name__ == "__main__":
     main()
