@@ -57,7 +57,7 @@ def main():
     if bus_type == 'vip':
         bus = VIPBus(10)
     elif bus_type == 'regular':
-        bus = Bus(2)
+        bus = Bus(30)
     else:
         print("we dont have that bus type at JAGUAR BUS") 
 
