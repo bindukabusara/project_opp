@@ -1,3 +1,11 @@
+'''
+BINDU KABUSARA JOSUE S22B13/011
+
+PROJECT NAME: BUS MANAGEMENT SYSTEM
+I CREATED THIS PROJECT BECAUSE MOST OF TIME WHEN I TRAVEL BY BUS USING JAGUAR AGENCY 
+I HAVE NOTICED THAT THEY HAVE A BAD MANAGEMENT BECAUSE SOMETIME I PAY BUT I WILL NOT FIND WHERE TO SIT
+'''
+
 class Passenger:
     def __init__(self, name, age, gender):
         self.name = name
@@ -52,6 +60,7 @@ class VIPBus(Bus):
 
 # Example usage:
 def main():
+    #bus=None
     bus_type = input("BOOK A TICKET(🎟) \n JAGUAR BUS 🚌\nChoose bus type (VIP/Regular): ").lower()
 
     if bus_type == 'vip':
@@ -82,3 +91,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
